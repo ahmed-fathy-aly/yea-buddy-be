@@ -1,0 +1,1381 @@
+[
+  {
+    "day": "Sunday, May 4th, 2025",
+    "title": "Biceps, Forearms, Traps",
+    "subtitle": "Ref: Precor Cable Machine, Rope, EZ Bar, Straight Bar, Dumbbells",
+    "exercises": [
+      {
+        "name": "Single Arm Hammer Curl",
+        "target_muscles": "Biceps, Forearms",
+        "machine": "Precor Cable",
+        "attachments": "Rope",
+        "sets": [
+          { "reps": 12, "weight": 30, "unit": "lbs" },
+          { "reps": 12, "weight": 30, "unit": "lbs" },
+          { "reps": 12, "weight": 30, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Single Arm Reverse Cable Curl",
+        "target_muscles": "Forearms",
+        "machine": "Precor Cable",
+        "attachments": "Rope",
+        "sets": [
+          { "reps": 15, "weight": 10, "unit": "lbs" },
+          { "reps": 15, "weight": 10, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Dumbbell Shrugs",
+        "target_muscles": "Traps",
+        "machine": "Dumbbells",
+        "attachments": "",
+        "sets": [
+          { "reps": 15, "weight": 20, "unit": "kg" },
+          { "reps": 15, "weight": 20, "unit": "kg" },
+          { "reps": 15, "weight": 20, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Wide-Grip EZ-Bar Cable Curl",
+        "target_muscles": "Biceps",
+        "machine": "Precor Cable",
+        "attachments": "EZ Bar",
+        "sets": [
+          { "reps": 10, "weight": 50, "unit": "lbs" },
+          { "reps": 10, "weight": 50, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Narrow-Grip Straight Bar Cable Curl",
+        "target_muscles": "Biceps",
+        "machine": "Precor Cable",
+        "attachments": "Straight Bar",
+        "sets": [
+          { "reps": 10, "weight": 40, "unit": "lbs" },
+          { "reps": 10, "weight": 40, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Face Pulls",
+        "target_muscles": "Rear Delts, Traps",
+        "machine": "Precor Cable",
+        "attachments": "Rope",
+        "sets": [
+          { "reps": 15, "weight": 30, "unit": "lbs" },
+          { "reps": 15, "weight": 30, "unit": "lbs" },
+          { "reps": 15, "weight": 30, "unit": "lbs" }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "Monday, May 5th, 2025",
+    "title": "Shoulders",
+    "subtitle": "Ref: Precor Converging Press, Synergy Machine, D-Handle, Cuff, Dumbbells",
+    "exercises": [
+      {
+        "name": "Precor Converging Shoulder Press",
+        "target_muscles": "Shoulders (Deltoids)",
+        "machine": "Precor Converging Press",
+        "attachments": "",
+        "sets": [
+          { "reps": 10, "weight": 130, "unit": "lbs" },
+          { "reps": 10, "weight": 130, "unit": "lbs" },
+          { "reps": 8, "weight": 130, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Cable Lateral Raise",
+        "target_muscles": "Shoulders (Lateral Deltoids)",
+        "machine": "Synergy Machine",
+        "attachments": "D-Handle",
+        "sets": [
+          { "reps": 12, "weight": 7.5, "unit": "kg" },
+          { "reps": 12, "weight": 7.5, "unit": "kg" },
+          { "reps": 10, "weight": 7.5, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Precor Rear Delt Fly",
+        "target_muscles": "Shoulders (Posterior Deltoids)",
+        "machine": "Precor Machine",
+        "attachments": "",
+        "sets": [
+          { "reps": 15, "weight": 100, "unit": "lbs" },
+          { "reps": 15, "weight": 100, "unit": "lbs" },
+          { "reps": 12, "weight": 100, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Single Arm Cable Front Raise",
+        "target_muscles": "Shoulders (Anterior Deltoids)",
+        "machine": "Synergy",
+        "attachments": "Cuff/Strap/Handle",
+        "sets": [
+          { "reps": 12, "weight": 5, "unit": "kg" },
+          { "reps": 12, "weight": 5, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Arnold Press",
+        "target_muscles": "Shoulders (All Deltoids)",
+        "machine": "Dumbbells",
+        "attachments": "",
+        "sets": [
+          { "reps": 10, "weight": 12, "unit": "kg" },
+          { "reps": 10, "weight": 12, "unit": "kg" },
+          { "reps": 8, "weight": 12, "unit": "kg" }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "Tuesday, May 6th, 2025",
+    "title": "Triceps",
+    "subtitle": "Ref: Precor Cable Machine, Cuff, Rope, EZ Bar, D-Handle, V-Bar",
+    "exercises": [
+      {
+        "name": "Single Arm Cuff Triceps Pushdown",
+        "target_muscles": "Triceps",
+        "machine": "Precor Cable",
+        "attachments": "Cuff",
+        "sets": [
+          { "reps": 15, "weight": 30, "unit": "lbs" },
+          { "reps": 12, "weight": 40, "unit": "lbs" },
+          { "reps": 10, "weight": 40, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Overhead Cable Rope Extension",
+        "target_muscles": "Triceps",
+        "machine": "Precor Cable",
+        "attachments": "Rope",
+        "sets": [
+          { "reps": 15, "weight": 50, "unit": "lbs" },
+          { "reps": 12, "weight": 60, "unit": "lbs" },
+          { "reps": 10, "weight": 60, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Skullcrushers (Lying Triceps Extensions)",
+        "target_muscles": "Triceps",
+        "machine": "EZ Bar",
+        "attachments": "Slight Incline Bench",
+        "sets": [
+          { "reps": 12, "weight": 10, "unit": "kg" },
+          { "reps": 10, "weight": 10, "unit": "kg" },
+          { "reps": 8, "weight": 10, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Single Arm Cable Reverse Grip Pushdown",
+        "target_muscles": "Triceps",
+        "machine": "Precor Cable",
+        "attachments": "D-Handle",
+        "sets": [
+          { "reps": 15, "weight": 20, "unit": "lbs" },
+          { "reps": 12, "weight": 20, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "V-Bar Triceps Pushdown",
+        "target_muscles": "Triceps",
+        "machine": "Precor Cable",
+        "attachments": "V-Bar",
+        "sets": [
+          { "reps": 18, "weight": 90, "unit": "lbs" },
+          { "reps": 15, "weight": 100, "unit": "lbs" },
+          { "reps": 12, "weight": 100, "unit": "lbs" }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "Wednesday, May 7th, 2025",
+    "title": "Back (V-Shape Focus)",
+    "subtitle": "Ref: Life Fitness Dual Pulley Lat/Row, V-Bar, D-Handle, Multi-Grip Bar",
+    "exercises": [
+      {
+        "name": "Wide-Grip Lat Pulldown",
+        "target_muscles": "Back (Lats)",
+        "machine": "Life Fitness Dual Pulley Lat Pulldown",
+        "attachments": "",
+        "sets": [
+          { "reps": 12, "weight": 26, "unit": "kg" },
+          { "reps": 12, "weight": 26, "unit": "kg" },
+          { "reps": 10, "weight": 26, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Seated Cable Row",
+        "target_muscles": "Back (Mid/Upper)",
+        "machine": "Life Fitness Dual Pulley Row",
+        "attachments": "V-Bar",
+        "sets": [
+          { "reps": 12, "weight": 26, "unit": "kg" },
+          { "reps": 10, "weight": 26, "unit": "kg" },
+          { "reps": 10, "weight": 26, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Single-Arm Straight-Arm Pulldown",
+        "target_muscles": "Back (Lats)",
+        "machine": "Life Fitness Dual Pulley",
+        "attachments": "D-Handle",
+        "sets": [
+          { "reps": 15, "weight": 13.75, "unit": "kg" },
+          { "reps": 12, "weight": 13.75, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Neutral Grip Lat Pulldown",
+        "target_muscles": "Back (Lats)",
+        "machine": "Life Fitness Dual Pulley Lat Pulldown",
+        "attachments": "Multi-Grip Bar",
+        "sets": [
+          { "reps": 12, "weight": 26, "unit": "kg" },
+          { "reps": 10, "weight": 26, "unit": "kg" }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "Thursday, May 8th, 2025",
+    "title": "Chest",
+    "subtitle": "Ref: Converging Press Machine, Dumbbells, Life Fitness Pec Fly, Precor Cable, Rope",
+    "exercises": [
+      {
+        "name": "Converging Chest Press",
+        "target_muscles": "Chest",
+        "machine": "Machine",
+        "attachments": "",
+        "sets": [
+          { "reps": 12, "weight": 70, "unit": "kg" },
+          { "reps": 10, "weight": 70, "unit": "kg" },
+          { "reps": 8, "weight": 70, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Dumbbell Incline Press",
+        "target_muscles": "Chest (Upper)",
+        "machine": "Dumbbells",
+        "attachments": "",
+        "sets": [
+          { "reps": 10, "weight": 20, "unit": "kg" },
+          { "reps": 8, "weight": 20, "unit": "kg" },
+          { "reps": 7, "weight": 20, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Pec Fly",
+        "target_muscles": "Chest (Inner)",
+        "machine": "Life Fitness Machine",
+        "attachments": "",
+        "sets": [
+          { "reps": 15, "weight": 65.5, "unit": "kg" },
+          { "reps": 12, "weight": 72.5, "unit": "kg" },
+          { "reps": 10, "weight": 72.5, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "High Pulley Rope Chest Pull/Fly",
+        "target_muscles": "Chest (Upper)",
+        "machine": "Precor Cable",
+        "attachments": "Rope",
+        "sets": [
+          { "reps": 15, "weight": 9, "unit": "kg" },
+          { "reps": 12, "weight": 9, "unit": "kg" }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "Friday, May 9th, 2025",
+    "title": "Legs (Quad/Calf Focus, some Hamstrings)",
+    "subtitle": "Ref: Precor Leg Press/Curl/Extension, Smith Machine, Dumbbells, Life Fitness Hip Abductor",
+    "exercises": [
+      {
+        "name": "Leg Press",
+        "target_muscles": "Quadriceps, Glutes, Hamstrings",
+        "machine": "Precor",
+        "attachments": "",
+        "sets": [
+          { "reps": 12, "weight": 186, "unit": "kg" },
+          { "reps": 12, "weight": 186, "unit": "kg" },
+          { "reps": 10, "weight": 186, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Seated Leg Curl",
+        "target_muscles": "Hamstrings",
+        "machine": "Precor",
+        "attachments": "",
+        "sets": [
+          { "reps": 12, "weight": 53, "unit": "kg" },
+          { "reps": 10, "weight": 53, "unit": "kg" },
+          { "reps": 10, "weight": 53, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Single-Leg Leg Extension",
+        "target_muscles": "Quadriceps",
+        "machine": "Precor",
+        "attachments": "",
+        "sets": [
+          { "reps": 10, "weight": 36, "unit": "kg" },
+          { "reps": 10, "weight": 36, "unit": "kg" },
+          { "reps": 8, "weight": 36, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Standing Calf Raises",
+        "target_muscles": "Calves (Gastrocnemius)",
+        "machine": "Smith Machine",
+        "attachments": "Block",
+        "sets": [
+          { "reps": 15, "weight": 20, "unit": "kg" },
+          { "reps": 12, "weight": 20, "unit": "kg" },
+          { "reps": 12, "weight": 20, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Seated Dumbbell Calf Raise",
+        "target_muscles": "Calves (Soleus)",
+        "machine": "Dumbbells",
+        "attachments": "",
+        "sets": [
+          { "reps": 15, "weight": 15, "unit": "kg" },
+          { "reps": 12, "weight": 15, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Hip Abductor",
+        "target_muscles": "Hip Abductors",
+        "machine": "Life Fitness",
+        "attachments": "",
+        "sets": [
+          { "reps": 15, "weight": 79.5, "unit": "kg" },
+          { "reps": 12, "weight": 79.5, "unit": "kg" }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "Saturday, May 10th, 2025",
+    "title": "Biceps, Forearms, Traps",
+    "subtitle": "Ref: EZ Bar, Plates, Dumbbells, Precor Cable, Straight Bar",
+    "exercises": [
+      {
+        "name": "EZ Bar Curl",
+        "target_muscles": "Biceps",
+        "machine": "EZ Bar",
+        "attachments": "Plates",
+        "sets": [
+          { "reps": 12, "weight": 10, "unit": "kg" },
+          { "reps": 10, "weight": 15, "unit": "kg" },
+          { "reps": 8, "weight": 15, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Incline Dumbbell Curls",
+        "target_muscles": "Biceps",
+        "machine": "Dumbbells",
+        "attachments": "Incline Bench",
+        "sets": [
+          { "reps": 12, "weight": 10, "unit": "kg" },
+          { "reps": 10, "weight": 10, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Dumbbell Hammer Curls",
+        "target_muscles": "Biceps, Forearms",
+        "machine": "Dumbbells",
+        "attachments": "",
+        "sets": [
+          { "reps": 10, "weight": 12.5, "unit": "kg" },
+          { "reps": 8, "weight": 12.5, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Dumbbell Wrist Curls (Palms Up)",
+        "target_muscles": "Forearms",
+        "machine": "Dumbbells",
+        "attachments": "",
+        "sets": [
+          { "reps": 15, "weight": 7.5, "unit": "kg" },
+          { "reps": 12, "weight": 7.5, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Cable Reverse Curls",
+        "target_muscles": "Forearms",
+        "machine": "Precor Cable",
+        "attachments": "Straight Bar",
+        "sets": [
+          { "reps": 15, "weight": 30, "unit": "lbs" },
+          { "reps": 12, "weight": 30, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Dumbbell Shrugs",
+        "target_muscles": "Traps",
+        "machine": "Dumbbells",
+        "attachments": "",
+        "sets": [
+          { "reps": 12, "weight": 25, "unit": "kg" },
+          { "reps": 11, "weight": 25, "unit": "kg" },
+          { "reps": 10, "weight": 25, "unit": "kg" }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "Sunday, May 11th, 2025",
+    "title": "Shoulders (Machine/Cable Focus)",
+    "subtitle": "Ref: Precor Machines - Converging Press, Rear Delt Fly, Cable, D-Handle, Cuffs, EZ Bar",
+    "exercises": [
+      {
+        "name": "Precor Converging Shoulder Press",
+        "target_muscles": "Shoulders (Deltoids)",
+        "machine": "Precor Converging Press",
+        "attachments": "",
+        "sets": [
+          { "reps": 11, "weight": 140, "unit": "lbs" },
+          { "reps": 10, "weight": 140, "unit": "lbs" },
+          { "reps": 9, "weight": 140, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Cable Lateral Raise",
+        "target_muscles": "Shoulders (Lateral Deltoids)",
+        "machine": "Precor Cable",
+        "attachments": "D-Handle",
+        "sets": [
+          { "reps": 15, "weight": 10, "unit": "lbs" },
+          { "reps": 12, "weight": 10, "unit": "lbs" },
+          { "reps": 12, "weight": 10, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Precor Rear Delt Fly",
+        "target_muscles": "Shoulders (Posterior Deltoids)",
+        "machine": "Precor Machine",
+        "attachments": "",
+        "sets": [
+          { "reps": 16, "weight": 100, "unit": "lbs" },
+          { "reps": 13, "weight": 110, "unit": "lbs" },
+          { "reps": 12, "weight": 110, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Single Arm Cable Front Raise",
+        "target_muscles": "Shoulders (Anterior Deltoids)",
+        "machine": "Precor Cable",
+        "attachments": "Cuffs",
+        "sets": [
+          { "reps": 15, "weight": 10, "unit": "lbs" },
+          { "reps": 12, "weight": 10, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Cable Upright Row",
+        "target_muscles": "Shoulders, Traps",
+        "machine": "Precor Cable",
+        "attachments": "EZ Bar",
+        "sets": [
+          { "reps": 15, "weight": 40, "unit": "lbs" },
+          { "reps": 12, "weight": 40, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Abdominal Machine",
+        "target_muscles": "Abs",
+        "machine": "Precor",
+        "attachments": "",
+        "sets": [
+          { "reps": 0, "weight": 0, "unit": "kg" }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "Monday, May 12th, 2025",
+    "title": "Chest",
+    "subtitle": "Ref: Converging Press Machine, Smith Machine, Life Fitness Pec Fly, Precor Cable, Rope",
+    "exercises": [
+      {
+        "name": "Converging Chest Press",
+        "target_muscles": "Chest",
+        "machine": "Machine",
+        "attachments": "",
+        "sets": [
+          { "reps": 12, "weight": 66, "unit": "kg" },
+          { "reps": 10, "weight": 73, "unit": "kg" },
+          { "reps": 8, "weight": 73, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Smith Machine Incline Press",
+        "target_muscles": "Chest (Upper)",
+        "machine": "Smith Machine",
+        "attachments": "",
+        "sets": [
+          { "reps": 12, "weight": 40, "unit": "kg" },
+          { "reps": 10, "weight": 50, "unit": "kg" },
+          { "reps": 8, "weight": 50, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Pec Fly",
+        "target_muscles": "Chest (Inner)",
+        "machine": "Life Fitness Machine",
+        "attachments": "",
+        "sets": [
+          { "reps": 13, "weight": 72.5, "unit": "kg" },
+          { "reps": 11, "weight": 72.5, "unit": "kg" },
+          { "reps": 10, "weight": 72.5, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "High Pulley Rope Chest Pull/Fly",
+        "target_muscles": "Chest (Upper)",
+        "machine": "Precor Cable",
+        "attachments": "Rope",
+        "sets": [
+          { "reps": 15, "weight": 13.75, "unit": "kg" },
+          { "reps": 12, "weight": 13.75, "unit": "kg" }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "Tuesday, May 13th, 2025",
+    "title": "REST DAY",
+    "subtitle": "",
+    "exercises": []
+  },
+  {
+    "day": "Wednesday, May 14th, 2025",
+    "title": "Back & Traps",
+    "subtitle": "Ref: Life Fitness Dual Pulley Lat/Row, V-Bar, D-Handle",
+    "exercises": [
+      {
+        "name": "Wide-Grip Lat Pulldown",
+        "target_muscles": "Back (Lats)",
+        "machine": "Life Fitness Dual Pulley Lat Pulldown",
+        "attachments": "",
+        "sets": [
+          { "reps": 15, "weight": 33.5, "unit": "kg" },
+          { "reps": 12, "weight": 33.5, "unit": "kg" },
+          { "reps": 11, "weight": 33.5, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Seated Cable Row",
+        "target_muscles": "Back (Mid/Upper)",
+        "machine": "Life Fitness Dual Pulley Row",
+        "attachments": "V-Bar",
+        "sets": [
+          { "reps": 12, "weight": 33.5, "unit": "kg" },
+          { "reps": 10, "weight": 33.5, "unit": "kg" },
+          { "reps": 9, "weight": 33.5, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Single-Arm Straight-Arm Pulldown",
+        "target_muscles": "Back (Lats)",
+        "machine": "Life Fitness Dual Pulley",
+        "attachments": "D-Handle",
+        "sets": [
+          { "reps": 15, "weight": 13.75, "unit": "kg" },
+          { "reps": 13, "weight": 13.75, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Neutral Grip Lat Pulldown",
+        "target_muscles": "Back (Lats)",
+        "machine": "Life Fitness Dual Pulley Lat Pulldown",
+        "attachments": "V-Bar",
+        "sets": [
+          { "reps": 11, "weight": 33.5, "unit": "kg" },
+          { "reps": 10, "weight": 33.5, "unit": "kg" }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "Thursday, May 15th, 2025",
+    "title": "Arms (Triceps Primary - Cable Focus)",
+    "subtitle": "Ref: Life Fitness Cable, Cuff, Rope, D-Handle, EZ Bar; Precor Cable, Straight Bar, V-Bar; Dumbbells",
+    "exercises": [
+      {
+        "name": "Single Arm Cuff Triceps Pushdown",
+        "target_muscles": "Triceps",
+        "machine": "Life Fitness Cable",
+        "attachments": "Cuff",
+        "sets": [
+          { "reps": 15, "weight": 11.25, "unit": "kg" },
+          { "reps": 12, "weight": 11.25, "unit": "kg" },
+          { "reps": 11, "weight": 11.25, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Overhead Cable Rope Extension",
+        "target_muscles": "Triceps",
+        "machine": "Life Fitness Cable",
+        "attachments": "Rope",
+        "sets": [
+          { "reps": 15, "weight": 21.25, "unit": "kg" },
+          { "reps": 13, "weight": 21.25, "unit": "kg" },
+          { "reps": 12, "weight": 21.25, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Single Arm Cable Reverse Grip Pushdown",
+        "target_muscles": "Triceps",
+        "machine": "Life Fitness Cable",
+        "attachments": "Cuff then D-Handle",
+        "sets": [
+          { "reps": 13, "weight": 8.75, "unit": "kg" },
+          { "reps": 12, "weight": 8.75, "unit": "kg" },
+          { "reps": 10, "weight": 8.75, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Cable Curls",
+        "target_muscles": "Biceps",
+        "machine": "Life Fitness Cable",
+        "attachments": "EZ Bar",
+        "sets": [
+          { "reps": 12, "weight": 21.25, "unit": "kg" },
+          { "reps": 10, "weight": 21.25, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Dumbbell Hammer Curls",
+        "target_muscles": "Biceps, Forearms",
+        "machine": "Dumbbells",
+        "attachments": "",
+        "sets": [
+          { "reps": 11, "weight": 12.5, "unit": "kg" },
+          { "reps": 9, "weight": 12.5, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Cable Reverse Curls",
+        "target_muscles": "Forearms",
+        "machine": "Precor Cable",
+        "attachments": "Straight Bar",
+        "sets": [
+          { "reps": 16, "weight": 30, "unit": "lbs" },
+          { "reps": 14, "weight": 30, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Close-Grip Cable Pressdown",
+        "target_muscles": "Triceps",
+        "machine": "Precor Cable",
+        "attachments": "V-Bar",
+        "sets": [
+          { "reps": 19, "weight": 70, "unit": "lbs" },
+          { "reps": 12, "weight": 90, "unit": "lbs" },
+          { "reps": 10, "weight": 90, "unit": "lbs" }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "Friday, May 16th, 2025",
+    "title": "Legs (Machine Focus)",
+    "subtitle": "Ref: Hack Squat Machine, Precor Seated Leg Curl/Extension, Dumbbells, Life Fitness Hip Abductor",
+    "exercises": [
+      {
+        "name": "Hack Squat",
+        "target_muscles": "Quadriceps, Glutes",
+        "machine": "Hack Squat Machine",
+        "attachments": "",
+        "sets": [
+          { "reps": 15, "weight": 40.8, "unit": "kg" },
+          { "reps": 12, "weight": 40, "unit": "kg" },
+          { "reps": 10, "weight": 50, "unit": "kg" },
+          { "reps": 10, "weight": 50, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Seated Leg Curl",
+        "target_muscles": "Hamstrings",
+        "machine": "Precor",
+        "attachments": "",
+        "sets": [
+          { "reps": 12, "weight": 53, "unit": "kg" },
+          { "reps": 10, "weight": 59, "unit": "kg" },
+          { "reps": 9, "weight": 59, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Single-Leg Leg Extension",
+        "target_muscles": "Quadriceps",
+        "machine": "Precor",
+        "attachments": "",
+        "sets": [
+          { "reps": 12, "weight": 36, "unit": "kg" },
+          { "reps": 10, "weight": 43, "unit": "kg" },
+          { "reps": 8, "weight": 43, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Standing Dumbbell Calf Raise",
+        "target_muscles": "Calves (Gastrocnemius)",
+        "machine": "Dumbbells",
+        "attachments": "",
+        "sets": [
+          { "reps": 15, "weight": 12.5, "unit": "kg" },
+          { "reps": 12, "weight": 12.5, "unit": "kg" },
+          { "reps": 11, "weight": 12.5, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Seated Dumbbell Calf Raise",
+        "target_muscles": "Calves (Soleus)",
+        "machine": "Dumbbells",
+        "attachments": "",
+        "sets": [
+          { "reps": 15, "weight": 10, "unit": "kg" },
+          { "reps": 13, "weight": 10, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Hip Abductor",
+        "target_muscles": "Hip Abductors",
+        "machine": "Life Fitness",
+        "attachments": "",
+        "sets": [
+          { "reps": 15, "weight": 86.25, "unit": "kg" },
+          { "reps": 12, "weight": 86.25, "unit": "kg" },
+          { "reps": 11, "weight": 86.25, "unit": "kg" }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "Saturday, May 17th, 2025",
+    "title": "Shoulders (Machine/Cable Focus, Lateral Delt Emphasis)",
+    "subtitle": "Ref: Precor Machines - Converging Press, Rear Delt Fly, Cable, D-Handle, Cuffs, EZ Bar",
+    "exercises": [
+      {
+        "name": "Precor Converging Shoulder Press",
+        "target_muscles": "Shoulders (Deltoids)",
+        "machine": "Precor Converging Press",
+        "attachments": "",
+        "sets": [
+          { "reps": 12, "weight": 140, "unit": "lbs" },
+          { "reps": 10, "weight": 150, "unit": "lbs" },
+          { "reps": 8, "weight": 150, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Cable Lateral Raise",
+        "target_muscles": "Shoulders (Lateral Deltoids)",
+        "machine": "Precor Cable",
+        "attachments": "D-Handle/Cuffs",
+        "sets": [
+          { "reps": 12, "weight": 15, "unit": "lbs" },
+          { "reps": 10, "weight": 15, "unit": "lbs" },
+          { "reps": 15, "weight": 10, "unit": "lbs" },
+          { "reps": 13, "weight": 10, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Precor Rear Delt Fly",
+        "target_muscles": "Shoulders (Posterior Deltoids)",
+        "machine": "Precor Machine",
+        "attachments": "",
+        "sets": [
+          { "reps": 15, "weight": 110, "unit": "lbs" },
+          { "reps": 12, "weight": 120, "unit": "lbs" },
+          { "reps": 10, "weight": 120, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Single Arm Cable Front Raise",
+        "target_muscles": "Shoulders (Anterior Deltoids)",
+        "machine": "Precor Cable",
+        "attachments": "Cuffs",
+        "sets": [
+          { "reps": 12, "weight": 10, "unit": "lbs" },
+          { "reps": 10, "weight": 10, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Cable Upright Row",
+        "target_muscles": "Shoulders, Traps",
+        "machine": "Precor Cable",
+        "attachments": "EZ Bar",
+        "sets": [
+          { "reps": 13, "weight": 40, "unit": "lbs" },
+          { "reps": 10, "weight": 50, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Abdominal Machine",
+        "target_muscles": "Abs",
+        "machine": "Precor",
+        "attachments": "",
+        "sets": [
+          { "reps": 0, "weight": 0, "unit": "kg" }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "Sunday, May 18th, 2025",
+    "title": "Arms 1 (Biceps Primary)",
+    "subtitle": "Ref: Precor Cable, Straight Bar, D-Handle, Rope, Cuff; Dumbbells",
+    "exercises": [
+      {
+        "name": "Standing Cable Curls",
+        "target_muscles": "Biceps",
+        "machine": "Precor Cable",
+        "attachments": "Straight Bar",
+        "sets": [
+          { "reps": 0, "weight": 0, "unit": "lbs" },
+          { "reps": 0, "weight": 0, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Single Arm Cable Curls",
+        "target_muscles": "Biceps",
+        "machine": "Precor Cable",
+        "attachments": "D-Handle",
+        "sets": [
+          { "reps": 0, "weight": 0, "unit": "lbs" },
+          { "reps": 0, "weight": 0, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Dumbbell Hammer Curls",
+        "target_muscles": "Biceps, Forearms",
+        "machine": "Dumbbells",
+        "attachments": "",
+        "sets": [
+          { "reps": 10, "weight": 15, "unit": "kg" },
+          { "reps": 8, "weight": 15, "unit": "kg" },
+          { "reps": 8, "weight": 15, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Overhead Cable Rope Extension",
+        "target_muscles": "Triceps",
+        "machine": "Precor Cable",
+        "attachments": "Rope",
+        "sets": [
+          { "reps": 12, "weight": 60, "unit": "lbs" },
+          { "reps": 10, "weight": 70, "unit": "lbs" },
+          { "reps": 9, "weight": 70, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Single Arm Cable Reverse Grip Pushdown",
+        "target_muscles": "Triceps",
+        "machine": "Precor Cable",
+        "attachments": "D-Handle/Cuff",
+        "sets": [
+          { "reps": 15, "weight": 20, "unit": "lbs" },
+          { "reps": 12, "weight": 20, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Cable Reverse Curls",
+        "target_muscles": "Forearms",
+        "machine": "Precor Cable",
+        "attachments": "Straight Bar",
+        "sets": [
+          { "reps": 15, "weight": 30, "unit": "lbs" },
+          { "reps": 12, "weight": 40, "unit": "lbs" },
+          { "reps": 10, "weight": 40, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Dumbbell Reverse Wrist Curls",
+        "target_muscles": "Forearms",
+        "machine": "Dumbbells",
+        "attachments": "Preacher Pad support",
+        "sets": [
+          { "reps": 15, "weight": 5, "unit": "kg" },
+          { "reps": 12, "weight": 5, "unit": "kg" },
+          { "reps": 12, "weight": 5, "unit": "kg" },
+          { "reps": 10, "weight": 5, "unit": "kg" }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "Monday, May 19th, 2025",
+    "title": "Legs (Focus: Quads above knee, Calves)",
+    "subtitle": "Ref: Hack Squat Machine, Precor Seated Leg Curl/Extension, Dumbbells",
+    "exercises": [
+      {
+        "name": "Hack Squat",
+        "target_muscles": "Quadriceps, Glutes",
+        "machine": "Hack Squat Machine",
+        "attachments": "",
+        "sets": [
+          { "reps": 12, "weight": 50, "unit": "kg" },
+          { "reps": 10, "weight": 60, "unit": "kg" },
+          { "reps": 9, "weight": 60, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Seated Leg Curl",
+        "target_muscles": "Hamstrings",
+        "machine": "Precor",
+        "attachments": "",
+        "sets": [
+          { "reps": 11, "weight": 59, "unit": "kg" },
+          { "reps": 10, "weight": 59, "unit": "kg" },
+          { "reps": 8, "weight": 59, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Single-Leg Leg Extension",
+        "target_muscles": "Quadriceps",
+        "machine": "Precor",
+        "attachments": "",
+        "sets": [
+          { "reps": 10, "weight": 43, "unit": "kg" },
+          { "reps": 9, "weight": 43, "unit": "kg" },
+          { "reps": 8, "weight": 43, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Standing Dumbbell Calf Raise",
+        "target_muscles": "Calves (Gastrocnemius)",
+        "machine": "Dumbbells",
+        "attachments": "",
+        "sets": [
+          { "reps": 10, "weight": 12.5, "unit": "kg" },
+          { "reps": 9, "weight": 12.5, "unit": "kg" },
+          { "reps": 8, "weight": 12.5, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Seated Dumbbell Calf Raise",
+        "target_muscles": "Calves (Soleus)",
+        "machine": "Dumbbells",
+        "attachments": "",
+        "sets": [
+          { "reps": 12, "weight": 10, "unit": "kg" },
+          { "reps": 11, "weight": 10, "unit": "kg" },
+          { "reps": 10, "weight": 10, "unit": "kg" }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "Tuesday, May 20th, 2025",
+    "title": "Back & Traps",
+    "subtitle": "Ref: Life Fitness Dual Pulley Lat/Row, V-Bar, Cable Machine, Rope",
+    "exercises": [
+      {
+        "name": "Wide-Grip Lat Pulldown",
+        "target_muscles": "Back (Lats)",
+        "machine": "Life Fitness Dual Pulley Lat Pulldown",
+        "attachments": "",
+        "sets": [
+          { "reps": 17, "weight": 33.5, "unit": "kg" },
+          { "reps": 12, "weight": 38.5, "unit": "kg" },
+          { "reps": 12, "weight": 38.5, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Seated Cable Row",
+        "target_muscles": "Back (Mid/Upper)",
+        "machine": "Life Fitness Dual Pulley Row",
+        "attachments": "V-Bar",
+        "sets": [
+          { "reps": 13, "weight": 33.5, "unit": "kg" },
+          { "reps": 9, "weight": 38.5, "unit": "kg" },
+          { "reps": 9, "weight": 38.5, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Straight-Arm Cable Pulldown",
+        "target_muscles": "Back (Lats)",
+        "machine": "Life Fitness Cable",
+        "attachments": "Rope",
+        "sets": [
+          { "reps": 15, "weight": 21.25, "unit": "kg" },
+          { "reps": 16, "weight": 21.25, "unit": "kg" },
+          { "reps": 15, "weight": 21.25, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Close Neutral Grip Lat Pulldown",
+        "target_muscles": "Back (Lats)",
+        "machine": "Life Fitness Dual Pulley Lat Pulldown",
+        "attachments": "V-Bar",
+        "sets": [
+          { "reps": 11, "weight": 38.5, "unit": "kg" },
+          { "reps": 10, "weight": 38.5, "unit": "kg" }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "Wednesday, May 21st, 2025",
+    "title": "Chest",
+    "subtitle": "Ref: Smith Machine, Converging Press Machine, Life Fitness Pec Fly/Cable, Rope",
+    "exercises": [
+      {
+        "name": "Smith Machine Incline Press",
+        "target_muscles": "Chest (Upper)",
+        "machine": "Smith Machine",
+        "attachments": "",
+        "sets": [
+          { "reps": 11, "weight": 60, "unit": "kg" },
+          { "reps": 13, "weight": 60, "unit": "kg" },
+          { "reps": 13, "weight": 60, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Converging Chest Press",
+        "target_muscles": "Chest",
+        "machine": "Machine",
+        "attachments": "",
+        "sets": [
+          { "reps": 6, "weight": 73, "unit": "kg" },
+          { "reps": 8, "weight": 73, "unit": "kg" },
+          { "reps": 7, "weight": 73, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Pec Fly",
+        "target_muscles": "Chest (Inner)",
+        "machine": "Life Fitness Machine",
+        "attachments": "",
+        "sets": [
+          { "reps": 13, "weight": 82.5, "unit": "kg" },
+          { "reps": 9, "weight": 82.5, "unit": "kg" },
+          { "reps": 10, "weight": 82.5, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "High Pulley Rope Chest Pull/Fly",
+        "target_muscles": "Chest (Upper)",
+        "machine": "Life Fitness Cable",
+        "attachments": "Rope",
+        "sets": [
+          { "reps": 9, "weight": 13.75, "unit": "kg" },
+          { "reps": 12, "weight": 13.75, "unit": "kg" }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "Thursday, May 22nd, 2025",
+    "title": "Arms 1 (Biceps Primary, Triceps Secondary, Forearms - Cable Focused)",
+    "subtitle": "Ref: Precor Cable, Straight Bar, D-Handle, Cuff, Rope, V-Bar; Dumbbells",
+    "exercises": [
+      {
+        "name": "Cable Curls",
+        "target_muscles": "Biceps",
+        "machine": "Precor Cable",
+        "attachments": "Straight Bar",
+        "sets": [
+          { "reps": 15, "weight": 50, "unit": "lbs" },
+          { "reps": 12, "weight": 60, "unit": "lbs" },
+          { "reps": 10, "weight": 60, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Behind-the-Back Cable Curl",
+        "target_muscles": "Biceps",
+        "machine": "Precor Cable",
+        "attachments": "D-Handle",
+        "sets": [
+          { "reps": 15, "weight": 20, "unit": "lbs" },
+          { "reps": 12, "weight": 20, "unit": "lbs" },
+          { "reps": 10, "weight": 20, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Single Arm Cable Hammer Curl",
+        "target_muscles": "Biceps, Forearms",
+        "machine": "Precor Cable",
+        "attachments": "Cuff",
+        "sets": [
+          { "reps": 12, "weight": 20, "unit": "lbs" },
+          { "reps": 10, "weight": 20, "unit": "lbs" },
+          { "reps": 10, "weight": 20, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Overhead Cable Rope Extension",
+        "target_muscles": "Triceps",
+        "machine": "Precor Cable",
+        "attachments": "Rope",
+        "sets": [
+          { "reps": 15, "weight": 80, "unit": "lbs" },
+          { "reps": 14, "weight": 80, "unit": "lbs" },
+          { "reps": 14, "weight": 80, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Single Arm Cable Reverse Grip Pushdown",
+        "target_muscles": "Triceps",
+        "machine": "Precor Cable",
+        "attachments": "D-Handle/Cuff",
+        "sets": [
+          { "reps": 12, "weight": 30, "unit": "lbs" },
+          { "reps": 10, "weight": 30, "unit": "lbs" },
+          { "reps": 9, "weight": 30, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Overhead Cable V-Bar Extension",
+        "target_muscles": "Triceps",
+        "machine": "Precor Cable",
+        "attachments": "V-Bar",
+        "sets": [
+          { "reps": 12, "weight": 70, "unit": "lbs" },
+          { "reps": 10, "weight": 70, "unit": "lbs" },
+          { "reps": 10, "weight": 70, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Cable Reverse Curls",
+        "target_muscles": "Forearms",
+        "machine": "Precor Cable",
+        "attachments": "Straight Bar",
+        "sets": [
+          { "reps": 17, "weight": 40, "unit": "lbs" },
+          { "reps": 12, "weight": 50, "unit": "lbs" },
+          { "reps": 13, "weight": 50, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Dumbbell Reverse Wrist Curls",
+        "target_muscles": "Forearms",
+        "machine": "Dumbbells",
+        "attachments": "Preacher Pad support",
+        "sets": [
+          { "reps": 15, "weight": 5, "unit": "kg" },
+          { "reps": 12, "weight": 7.5, "unit": "kg" },
+          { "reps": 10, "weight": 7.5, "unit": "kg" },
+          { "reps": 10, "weight": 7.5, "unit": "kg" }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "Friday, May 23rd, 2025",
+    "title": "Shoulders (Machine/Cable Focus, Lateral Delt Emphasis)",
+    "subtitle": "Ref: Life Fitness Shoulder Press/Cable, D-Handles. Planned: Precor Rear Delt Fly, Cable Front Raise, Cable Upright Row",
+    "exercises": [
+      {
+        "name": "Life Fitness Shoulder Press",
+        "target_muscles": "Shoulders (Deltoids)",
+        "machine": "Life Fitness Machine",
+        "attachments": "",
+        "sets": [
+          { "reps": 8, "weight": 50, "unit": "kg" },
+          { "reps": 9, "weight": 50, "unit": "kg" },
+          { "reps": 8, "weight": 50, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Cable Lateral Raise",
+        "target_muscles": "Shoulders (Lateral Deltoids)",
+        "machine": "Life Fitness Cable",
+        "attachments": "D-Handles",
+        "sets": [
+          { "reps": 9, "weight": 7.5, "unit": "kg" },
+          { "reps": 19, "weight": 7.5, "unit": "kg" },
+          { "reps": 8, "weight": 11.25, "unit": "kg" }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "Saturday, May 24th, 2025",
+    "title": "LEGS (Balanced - Machine Focused)",
+    "subtitle": "Leg Press focus on Quads/VMO (Ref: Precor Leg Press/Curl/Extension, Dumbbells)",
+    "exercises": [
+      {
+        "name": "Leg Press",
+        "target_muscles": "Quadriceps, VMO, Glutes",
+        "machine": "Precor",
+        "attachments": "",
+        "sets": [
+          { "reps": 12, "weight": 136, "unit": "kg" },
+          { "reps": 10, "weight": 145, "unit": "kg" },
+          { "reps": 9, "weight": 145, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Seated Leg Curl",
+        "target_muscles": "Hamstrings",
+        "machine": "Precor",
+        "attachments": "",
+        "sets": [
+          { "reps": 11, "weight": 66, "unit": "kg" },
+          { "reps": 10, "weight": 66, "unit": "kg" },
+          { "reps": 9, "weight": 66, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Single-Leg Leg Extension",
+        "target_muscles": "Quadriceps",
+        "machine": "Precor",
+        "attachments": "",
+        "sets": [
+          { "reps": 11, "weight": 50, "unit": "kg" },
+          { "reps": 10, "weight": 50, "unit": "kg" },
+          { "reps": 9, "weight": 50, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Standing Calf Raises",
+        "target_muscles": "Calves (Gastrocnemius)",
+        "machine": "Dumbbells",
+        "attachments": "",
+        "sets": [
+          { "reps": 10, "weight": 12.5, "unit": "kg" },
+          { "reps": 9, "weight": 12.5, "unit": "kg" },
+          { "reps": 9, "weight": 12.5, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Seated Calf Raises",
+        "target_muscles": "Calves (Soleus)",
+        "machine": "Dumbbells",
+        "attachments": "",
+        "sets": [
+          { "reps": 12, "weight": 10, "unit": "kg" },
+          { "reps": 10, "weight": 10, "unit": "kg" },
+          { "reps": 10, "weight": 10, "unit": "kg" }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "Sunday, May 25th, 2025",
+    "title": "ARMS 2 (Triceps Primary, Biceps Secondary, Forearms - Cable Focused)",
+    "subtitle": "Ref: Precor Cable, V-Bar, Straight Bar",
+    "exercises": [
+      {
+        "name": "V-Bar Triceps Pushdown",
+        "target_muscles": "Triceps",
+        "machine": "Precor Cable",
+        "attachments": "V-Bar",
+        "sets": [
+          { "reps": 12, "weight": 100, "unit": "lbs" }
+        ]
+      },
+      {
+        "name": "Cable Reverse Curls",
+        "target_muscles": "Forearms",
+        "machine": "Precor Cable",
+        "attachments": "Straight Bar",
+        "sets": [
+          { "reps": 12, "weight": 50, "unit": "lbs" }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "Monday, May 26th, 2025",
+    "title": "REST DAY",
+    "subtitle": "",
+    "exercises": []
+  },
+  {
+    "day": "Tuesday, May 27th, 2025",
+    "title": "CHEST",
+    "subtitle": "Ref: Smith Machine, Converging Press, Life Fitness Pec Fly/Cable, Rope",
+    "exercises": [
+      {
+        "name": "Smith Machine Incline Press",
+        "target_muscles": "Chest (Upper)",
+        "machine": "Smith Machine",
+        "attachments": "",
+        "sets": [
+          { "reps": 0, "weight": 0, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Converging Chest Press",
+        "target_muscles": "Chest",
+        "machine": "Machine",
+        "attachments": "",
+        "sets": [
+          { "reps": 0, "weight": 0, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Pec Fly",
+        "target_muscles": "Chest (Inner)",
+        "machine": "Life Fitness Machine",
+        "attachments": "",
+        "sets": [
+          { "reps": 0, "weight": 0, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "High Pulley Rope Chest Pull/Fly",
+        "target_muscles": "Chest (Upper)",
+        "machine": "Life Fitness Cable",
+        "attachments": "Rope",
+        "sets": [
+          { "reps": 0, "weight": 0, "unit": "kg" }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "Wednesday, May 28th, 2025",
+    "title": "BACK & TRAPS (Partial)",
+    "subtitle": "Ref: Precor Lat Pulldown Machine",
+    "exercises": [
+      {
+        "name": "Wide-Grip Lat Pulldown",
+        "target_muscles": "Back (Lats)",
+        "machine": "Precor Machine",
+        "attachments": "",
+        "sets": [
+          { "reps": 8, "weight": 86, "unit": "kg" }
+        ]
+      }
+    ]
+  },
+  {
+    "day": "Thursday, May 29th, 2025",
+    "title": "SHOULDERS (Machine/Cable Focus, Lateral Delt Emphasis)",
+    "subtitle": "Ref: Life Fitness Shoulder Press/Cable, D-Handles. Planned: Precor Rear Delt Fly, Cable Front Raise, Cable Upright Row",
+    "exercises": [
+      {
+        "name": "Life Fitness Shoulder Press",
+        "target_muscles": "Shoulders (Deltoids)",
+        "machine": "Life Fitness Machine",
+        "attachments": "",
+        "sets": [
+          { "reps": 8, "weight": 50, "unit": "kg" },
+          { "reps": 9, "weight": 50, "unit": "kg" },
+          { "reps": 8, "weight": 50, "unit": "kg" }
+        ]
+      },
+      {
+        "name": "Cable Lateral Raise",
+        "target_muscles": "Shoulders (Lateral Deltoids)",
+        "machine": "Life Fitness Cable",
+        "attachments": "D-Handles",
+        "sets": [
+          { "reps": 9, "weight": 7.5, "unit": "kg" },
+          { "reps": 19, "weight": 7.5, "unit": "kg" },
+          { "reps": 8, "weight": 11.25, "unit": "kg" }
+        ]
+      }
+    ]
+  }
+]

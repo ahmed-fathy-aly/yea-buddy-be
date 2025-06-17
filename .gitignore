@@ -1,0 +1,26 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-store/
+.env # Local environment variables (sensitive)
+
+# Database
+*.db # Your SQLite database file (e.g., workouts.db)
+config.js     # Your local configuration, often containing sensitive API keys or local DB credentials
+
+# Editor/OS specific files
+.DS_Store # macOS
+.vscode/ # VS Code settings (optional, if you have user-specific settings)
+npm-shrinkwrap.json # If you use npm shrinkwrap
+yarn.lock # If you use Yarn
+pnpm-lock.yaml # If you use pnpm
+
+# Logs
+logs/
+*.log
+
+# Build artifacts
+dist/
+build/
