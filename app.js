@@ -1,17 +1,12 @@
-// app.js is in a separate immersive due to extensive content.
-// Please ensure you have updated the database.js content above.
-
-// app.js
 require('dotenv').config();
 
 const express = require('express');
 const { pool, initializePgSchema } = require('./database');
-// Removed child_process as killProcessOnPort is removed
+// Removed child_process import as it's no longer used
 // const { exec } = require('child_process');
 const cors = require('cors');
 
 const app = express();
-// Render automatically assigns a PORT. Use process.env.PORT
 const port = process.env.PORT || 3000; 
 
 app.use(express.json());
@@ -101,6 +96,7 @@ const formatWorkoutAsText = (workout) => {
       if (exercise.sets && exercise.sets.length > 0) {
         text += '  Sets:\n';
         exercise.sets.forEach((set, setIndex) => {
+          // Displaying 0 reps and weight, but AI tip will have the suggestion
           text += `    Set ${setIndex + 1}: ${set.reps} reps @ ${set.weight} ${set.unit}`;
           if (set.ai_tips) {
             text += ` - Tips: ${set.ai_tips}\n`;
@@ -264,6 +260,80 @@ app.delete('/workouts/:id', async (req, res) => {
   }
 });
 
+// NEW ENDPOINT: Request tips for a specific exercise
+app.post('/exercise-tips/:exerciseId', async (req, res) => {
+  const exerciseId = parseInt(req.params.exerciseId);
+  const { additional_input } = req.body;
+
+  try {
+    // 1. Fetch the specific exercise details
+    const exercise = await getAsync('SELECT * FROM exercises WHERE id = $1', [exerciseId]);
+    if (!exercise) {
+      return res.status(404).json({ message: 'Exercise not found.' });
+    }
+
+    // 2. Fetch the full workout details this exercise belongs to
+    const workout = await getAsync('SELECT * FROM workouts WHERE id = $1', [exercise.workout_id]);
+    if (!workout) {
+      // This should ideally not happen if data integrity is maintained
+      return res.status(404).json({ message: 'Workout associated with exercise not found.' });
+    }
+
+    // 3. Fetch all exercises and sets for that workout to provide full context
+    const allExercisesInWorkout = await allAsync('SELECT * FROM exercises WHERE workout_id = $1', [workout.id]);
+    const workoutDetailsWithAllExercises = { ...workout, exercises: [] };
+
+    for (const ex of allExercisesInWorkout) {
+      const sets = await allAsync('SELECT * FROM sets WHERE exercise_id = $1', [ex.id]);
+      workoutDetailsWithAllExercises.exercises.push({ ...ex, sets });
+    }
+
+    // 4. Construct the prompt for Gemini
+    let prompt = `Provide detailed tips and advice for the following exercise, considering its context within the full workout plan. Focus on proper form, common mistakes, variations, and how to maximize effectiveness.
+    
+    Exercise to get tips for:
+    ${JSON.stringify(exercise, null, 2)}
+
+    Context of its workout plan:
+    ${JSON.stringify(workoutDetailsWithAllExercises, null, 2)}
+    `;
+
+    if (additional_input) {
+      prompt += `\nAdditional specific request from user: ${additional_input}`;
+    }
+
+    prompt += `\n\nDetailed tips:`;
+
+    // 5. Call the Gemini API
+    let chatHistory = [];
+    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+    const payload = { contents: chatHistory };
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`;
+
+    const response = await fetch(apiUrl, {
+               method: 'POST',
+               headers: { 'Content-Type': 'application/json' },
+               body: JSON.stringify(payload)
+           });
+
+    const result = await response.json();
+
+    // 6. Return the AI's tips as plain text
+    if (result.candidates && result.candidates.length > 0 &&
+        result.candidates[0].content && result.candidates[0].content.parts &&
+        result.candidates[0].content.parts.length > 0) {
+      res.send(result.candidates[0].content.parts[0].text);
+    } else {
+      res.status(500).json({ error: 'Failed to get exercise tips from AI, or unexpected response format.' });
+    }
+
+  } catch (err) {
+    console.error('Error fetching exercise tips:', err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
 const fetchAllWorkoutData = async () => {
   const workouts = await allAsync('SELECT * FROM workouts');
   const allWorkoutDetails = [];
@@ -301,7 +371,7 @@ const buildGeminiPrompt = (allWorkoutDetails, additional_input) => {
       ],
       "ai_tips": "STRING (optional, overall tips for the workout)"
     }
-    For each exercise, and for each set within an exercise, include a brief 'ai_tips' field with relevant suggestions (e.g., proper form, common mistakes, intensity cues). **IMPORTANT: Set the 'weight' field to 0 for all suggested sets; the user will determine their actual working weight.**
+    For each exercise, and for each set within an exercise, set the 'reps' and 'weight' fields to 0. **IMPORTANT: Include the suggested weight and reps (e.g., 'Aim for 8-12 reps, 50-60kg') in the 'ai_tips' field for each set.** Also, provide a sensible 'unit' (kg or lbs).
     For the overall workout, provide an 'ai_tips' field with general advice or focus.
     Ensure all fields are correctly populated and units are 'kg' or 'lbs'.
     If no exercises is suggested, provide an empty array for 'exercises'.
@@ -331,7 +401,7 @@ const callGeminiAPI = async (prompt) => {
                body: JSON.stringify(payload)
            });
 
-  const result = await response.json();
+  const result = await response.json(); // Corrected: Added 'await'
 
   if (result.candidates && result.candidates.length > 0 &&
       result.candidates[0].content && result.candidates[0].content.parts &&
@@ -382,12 +452,13 @@ const saveSuggestedWorkoutToDb = async (suggestedWorkoutJson) => {
       if (sets && Array.isArray(sets)) {
         for (const set of sets) {
           const { reps, weight, unit, ai_tips: set_ai_tips } = set;
+          const repsToSave = 0;
           const weightToSave = 0;
-          if (typeof reps !== 'number' || !['kg', 'lbs'].includes(unit)) {
+          if (!['kg', 'lbs'].includes(unit)) {
             console.warn(`Skipping invalid set for exercise ${name}:`, set);
             continue;
           }
-          await runAsync('INSERT INTO sets (exercise_id, reps, weight, unit, ai_tips) VALUES ($1, $2, $3, $4, $5) RETURNING id', [exerciseId, reps, weightToSave, unit, set_ai_tips || null]);
+          await runAsync('INSERT INTO sets (exercise_id, reps, weight, unit, ai_tips) VALUES ($1, $2, $3, $4, $5) RETURNING id', [exerciseId, repsToSave, weightToSave, unit, set_ai_tips || null]);
         }
       }
     }
@@ -420,19 +491,10 @@ app.post('/suggest-workout', async (req, res) => {
 
 const startServer = async () => {
   try {
-    // Removed specific platform check for lsof and the function call
-    // The hosting environment should manage port availability.
-    // if (process.platform !== 'win32') {
-    //   await killProcessOnPort(port);
-    // } else {
-    //   console.log('Skipping process kill by port on Windows. Please ensure port 3000 is free manually if starting locally.');
-    // }
-
     await initializePgSchema();
 
     app.listen(port, () => {
       console.log(`Workout tracker API listening on port ${port}`);
-      // Changed output message slightly to be more generic for deployed environments
       console.log('Access the API via its public URL if deployed, or http://localhost:3000 locally.');
     });
   } catch (error) {
