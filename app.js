@@ -1,22 +1,22 @@
-// This is the main application file, setting up the Express server and API endpoints.
-// Create a file named 'app.js' with this content.
+// app.js is in a separate immersive due to extensive content.
+// Please ensure you have updated the database.js content above.
 
-require('dotenv').config(); // NEW: Load environment variables from .env file
+// app.js
+require('dotenv').config();
 
 const express = require('express');
 const { pool, initializePgSchema } = require('./database');
-const { exec } = require('child_process');
-// const config = require('./config'); // REMOVED: config.js is no longer used
+// Removed child_process as killProcessOnPort is removed
+// const { exec } = require('child_process');
 const cors = require('cors');
 
 const app = express();
-const port = 3000;
+// Render automatically assigns a PORT. Use process.env.PORT
+const port = process.env.PORT || 3000; 
 
-// Middleware
 app.use(express.json());
 app.use(cors());
 
-// Helper function to run a SQL query that returns a single row
 const getAsync = async (sql, params = []) => {
   const client = await pool.connect();
   try {
@@ -27,7 +27,6 @@ const getAsync = async (sql, params = []) => {
   }
 };
 
-// Helper function to run a SQL query that returns multiple rows
 const allAsync = async (sql, params = []) => {
   const client = await pool.connect();
   try {
@@ -38,19 +37,18 @@ const allAsync = async (sql, params = []) => {
   }
 };
 
-// Helper function to run a SQL query (e.g., INSERT, UPDATE, DELETE)
 const runAsync = async (sql, params = []) => {
   const client = await pool.connect();
   try {
     const result = await client.query(sql, params);
-    // For INSERT, result.rows[0].id will give last inserted ID
-    // For UPDATE/DELETE, result.rowCount will give number of affected rows
     return { changes: result.rowCount, lastID: result.rows[0]?.id };
   } finally {
     client.release();
   }
 };
 
+// Removed killProcessOnPort function as it's not needed/supported in Render environment
+/*
 const killProcessOnPort = (port) => {
   return new Promise((resolve, reject) => {
     exec(`lsof -t -i :${port}`, (err, stdout, stderr) => {
@@ -79,6 +77,7 @@ const killProcessOnPort = (port) => {
     });
   });
 };
+*/
 
 const formatWorkoutAsText = (workout) => {
   let text = `\n--- Suggested Workout for ${workout.day || 'Today'} ---\n`;
@@ -324,7 +323,7 @@ const callGeminiAPI = async (prompt) => {
   let chatHistory = [];
   chatHistory.push({ role: "user", parts: [{ text: prompt }] });
   const payload = { contents: chatHistory };
-  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`; // Access from process.env
+  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`;
 
   const response = await fetch(apiUrl, {
                method: 'POST',
@@ -421,18 +420,20 @@ app.post('/suggest-workout', async (req, res) => {
 
 const startServer = async () => {
   try {
-    if (process.platform !== 'win32') {
-      await killProcessOnPort(port);
-    } else {
-      console.log('Skipping process kill by port on Windows. Please ensure port 3000 is free manually if starting locally.');
-    }
+    // Removed specific platform check for lsof and the function call
+    // The hosting environment should manage port availability.
+    // if (process.platform !== 'win32') {
+    //   await killProcessOnPort(port);
+    // } else {
+    //   console.log('Skipping process kill by port on Windows. Please ensure port 3000 is free manually if starting locally.');
+    // }
 
-    // Initialize PostgreSQL schema (create tables if they don't exist)
     await initializePgSchema();
 
     app.listen(port, () => {
-      console.log(`Workout tracker API listening at http://localhost:${port}`);
-      console.log('Use tools like Postman or curl to test the API endpoints.');
+      console.log(`Workout tracker API listening on port ${port}`);
+      // Changed output message slightly to be more generic for deployed environments
+      console.log('Access the API via its public URL if deployed, or http://localhost:3000 locally.');
     });
   } catch (error) {
     console.error('Failed to start server:', error.message);
