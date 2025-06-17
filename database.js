@@ -1,14 +1,11 @@
 // This file handles the PostgreSQL database initialization and operations.
-// Create a file named 'database.js' with this content.
-const { Pool } = require('pg'); // Import Pool from 'pg'
-const config = require('./config'); // Import your config
+const { Pool } = require('pg');
 
 // Create a new Pool instance for PostgreSQL connection
 // For Render deployment, DATABASE_URL will be automatically set by Render
-// For local development, use the DATABASE_URL from config.js
+// For local development, it will be loaded from the .env file by dotenv
 const pool = new Pool({
-  connectionString: config.DATABASE_URL,
-  // Recommended for Render to prevent issues with SSL
+  connectionString: process.env.DATABASE_URL, // Access directly from process.env
   ssl: {
     rejectUnauthorized: false
   }
@@ -20,7 +17,7 @@ pool.connect((err, client, release) => {
     return console.error('Error acquiring client from pool', err.stack);
   }
   client.query('SELECT NOW()', (err, result) => {
-    release(); // Release the client back to the pool
+    release();
     if (err) {
       return console.error('Error executing query', err.stack);
     }
@@ -28,18 +25,14 @@ pool.connect((err, client, release) => {
   });
 });
 
-
 // Function to initialize the database schema for PostgreSQL
 const initializePgSchema = async () => {
   try {
-    // Drop tables if they exist to start fresh (for development purposes, or clean migration)
-    // In production, manage migrations carefully.
-    await pool.query(`DROP TABLE IF EXISTS sets`);
-    await pool.query(`DROP TABLE IF EXISTS exercises`);
-    await pool.query(`DROP TABLE IF EXISTS workouts`);
+    // Removed DROP TABLE statements to prevent data loss on restart
+    // await pool.query(`DROP TABLE IF EXISTS sets CASCADE`);
+    // await pool.query(`DROP TABLE IF EXISTS exercises CASCADE`);
+    // await pool.query(`DROP TABLE IF EXISTS workouts CASCADE`);
 
-
-    // Create Workouts table
     await pool.query(`
       CREATE TABLE IF NOT EXISTS workouts (
         id SERIAL PRIMARY KEY,
@@ -51,7 +44,6 @@ const initializePgSchema = async () => {
     `);
     console.log('Workouts table created or already exists (PostgreSQL).');
 
-    // Create Exercises table
     await pool.query(`
       CREATE TABLE IF NOT EXISTS exercises (
         id SERIAL PRIMARY KEY,
@@ -65,7 +57,6 @@ const initializePgSchema = async () => {
     `);
     console.log('Exercises table created or already exists (PostgreSQL).');
 
-    // Create Sets table
     await pool.query(`
       CREATE TABLE IF NOT EXISTS sets (
         id SERIAL PRIMARY KEY,
@@ -84,8 +75,7 @@ const initializePgSchema = async () => {
   }
 };
 
-// Export the pool for use in app.js
 module.exports = {
   pool,
-  initializePgSchema // Export the initialization function
+  initializePgSchema
 };
