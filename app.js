@@ -1,9 +1,12 @@
 // This is the main application file, setting up the Express server and API endpoints.
 // Create a file named 'app.js' with this content.
+
+require('dotenv').config(); // NEW: Load environment variables from .env file
+
 const express = require('express');
-const { pool, initializePgSchema } = require('./database'); // Import pool and init function
+const { pool, initializePgSchema } = require('./database');
 const { exec } = require('child_process');
-const config = require('./config');
+// const config = require('./config'); // REMOVED: config.js is no longer used
 const cors = require('cors');
 
 const app = express();
@@ -11,14 +14,14 @@ const port = 3000;
 
 // Middleware
 app.use(express.json());
-app.use(cors()); // Enable CORS
+app.use(cors());
 
 // Helper function to run a SQL query that returns a single row
 const getAsync = async (sql, params = []) => {
   const client = await pool.connect();
   try {
     const result = await client.query(sql, params);
-    return result.rows[0]; // Return the first row
+    return result.rows[0];
   } finally {
     client.release();
   }
@@ -29,7 +32,7 @@ const allAsync = async (sql, params = []) => {
   const client = await pool.connect();
   try {
     const result = await client.query(sql, params);
-    return result.rows; // Return all rows
+    return result.rows;
   } finally {
     client.release();
   }
@@ -40,14 +43,14 @@ const runAsync = async (sql, params = []) => {
   const client = await pool.connect();
   try {
     const result = await client.query(sql, params);
-    return { changes: result.rowCount, lastID: result.rows[0]?.id }; // For INSERT, result.rows[0].id will give last inserted ID
+    // For INSERT, result.rows[0].id will give last inserted ID
+    // For UPDATE/DELETE, result.rowCount will give number of affected rows
+    return { changes: result.rowCount, lastID: result.rows[0]?.id };
   } finally {
     client.release();
   }
 };
 
-
-// Function to kill a process on a given port (remains the same as it's OS-specific)
 const killProcessOnPort = (port) => {
   return new Promise((resolve, reject) => {
     exec(`lsof -t -i :${port}`, (err, stdout, stderr) => {
@@ -77,7 +80,6 @@ const killProcessOnPort = (port) => {
   });
 };
 
-// Helper function to format workout data as text (remains the same)
 const formatWorkoutAsText = (workout) => {
   let text = `\n--- Suggested Workout for ${workout.day || 'Today'} ---\n`;
   text += `Title: ${workout.title}\n`;
@@ -118,10 +120,8 @@ const formatWorkoutAsText = (workout) => {
   return text;
 };
 
-
 // -------------------- API Endpoints --------------------
 
-// GET all workouts with full details
 app.get('/workouts', async (req, res) => {
   try {
     const workouts = await allAsync('SELECT * FROM workouts');
@@ -143,7 +143,6 @@ app.get('/workouts', async (req, res) => {
   }
 });
 
-// NEW ENDPOINT: GET today's workout
 app.get('/workouts/today', async (req, res) => {
   try {
     const today = new Date().toDateString();
@@ -167,8 +166,6 @@ app.get('/workouts/today', async (req, res) => {
   }
 });
 
-
-// POST a new workout
 app.post('/workouts', async (req, res) => {
   const { day, title, subtitle, exercises } = req.body;
 
@@ -210,7 +207,6 @@ app.post('/workouts', async (req, res) => {
   }
 });
 
-// PUT (Update) an existing workout
 app.put('/workouts/:id', async (req, res) => {
   const workoutId = req.params.id;
   const { day, title, subtitle, exercises } = req.body;
@@ -223,7 +219,6 @@ app.put('/workouts/:id', async (req, res) => {
       return res.status(404).json({ message: 'Workout not found or no changes made' });
     }
 
-    // Delete existing exercises and sets for this workout
     await runAsync('DELETE FROM sets WHERE exercise_id IN (SELECT id FROM exercises WHERE workout_id = $1)', [workoutId]);
     await runAsync('DELETE FROM exercises WHERE workout_id = $1', [workoutId]);
 
@@ -257,7 +252,6 @@ app.put('/workouts/:id', async (req, res) => {
   }
 });
 
-// DELETE a workout
 app.delete('/workouts/:id', async (req, res) => {
   const workoutId = req.params.id;
   try {
@@ -271,11 +265,6 @@ app.delete('/workouts/:id', async (req, res) => {
   }
 });
 
-// Refactored helper functions for suggest-workout API
-/**
- * Fetches all workout data, including exercises and their sets, from the database.
- * @returns {Array<Object>} An array of workout objects with nested exercises and sets.
- */
 const fetchAllWorkoutData = async () => {
   const workouts = await allAsync('SELECT * FROM workouts');
   const allWorkoutDetails = [];
@@ -293,12 +282,6 @@ const fetchAllWorkoutData = async () => {
   return allWorkoutDetails;
 };
 
-/**
- * Builds the prompt string for the Gemini API based on past workout data and additional user input.
- * @param {Array<Object>} allWorkoutDetails - The fetched workout data.
- * @param {string} [additional_input] - Optional additional instructions from the user.
- * @returns {string} The complete prompt string.
- */
 const buildGeminiPrompt = (allWorkoutDetails, additional_input) => {
   let prompt = `Based on the following past workout data, suggest a workout plan for today.
     The suggestion MUST be returned as a JSON object strictly following this schema:
@@ -322,7 +305,7 @@ const buildGeminiPrompt = (allWorkoutDetails, additional_input) => {
     For each exercise, and for each set within an exercise, include a brief 'ai_tips' field with relevant suggestions (e.g., proper form, common mistakes, intensity cues). **IMPORTANT: Set the 'weight' field to 0 for all suggested sets; the user will determine their actual working weight.**
     For the overall workout, provide an 'ai_tips' field with general advice or focus.
     Ensure all fields are correctly populated and units are 'kg' or 'lbs'.
-    If no exercises are suggested, provide an empty array for 'exercises'.
+    If no exercises is suggested, provide an empty array for 'exercises'.
     DO NOT include any conversational text outside the JSON.
 
     Past Workout Data:
@@ -337,23 +320,17 @@ const buildGeminiPrompt = (allWorkoutDetails, additional_input) => {
   return prompt;
 };
 
-/**
- * Calls the Gemini API with the given prompt and returns the raw response.
- * @param {string} prompt - The prompt to send to the Gemini API.
- * @returns {Object} The JSON response from the Gemini API.
- * @throws {Error} If the API call fails or returns an unexpected structure.
- */
 const callGeminiAPI = async (prompt) => {
   let chatHistory = [];
   chatHistory.push({ role: "user", parts: [{ text: prompt }] });
   const payload = { contents: chatHistory };
-  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${config.GEMINI_API_KEY}`;
+  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`; // Access from process.env
 
   const response = await fetch(apiUrl, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload)
-  });
+               method: 'POST',
+               headers: { 'Content-Type': 'application/json' },
+               body: JSON.stringify(payload)
+           });
 
   const result = await response.json();
 
@@ -366,28 +343,15 @@ const callGeminiAPI = async (prompt) => {
   }
 };
 
-/**
- * Parses and cleans the raw text response from the Gemini API into a JSON object.
- * @param {Object} geminiResult - The raw JSON result from the Gemini API.
- * @returns {Object} The parsed and cleaned workout JSON object.
- */
 const parseAndCleanGeminiResponse = (geminiResult) => {
   let suggestedWorkoutRawText = geminiResult.candidates[0].content.parts[0].text;
-
-  // Clean the raw text by removing leading/trailing markdown code block fences
   suggestedWorkoutRawText = suggestedWorkoutRawText.replace(/^```json\n/, '').replace(/\n```$/, '').trim();
-
   return JSON.parse(suggestedWorkoutRawText);
 };
 
-/**
- * Deletes today's workout from the database.
- * @returns {Promise<void>} A promise that resolves when the deletion is complete.
- */
 const deleteTodaysWorkout = async () => {
   const today = new Date().toDateString();
   try {
-    // Use `DELETE FROM` with `WHERE` clause for PostgreSQL
     const result = await runAsync('DELETE FROM workouts WHERE day = $1', [today]);
     if (result.changes > 0) {
       console.log(`Deleted existing workout for today (${today}).`);
@@ -396,18 +360,11 @@ const deleteTodaysWorkout = async () => {
     }
   } catch (error) {
     console.error(`Error deleting today's workout:`, error.message);
-    throw error; // Re-throw to halt if critical
+    throw error;
   }
 };
 
-/**
- * Saves the suggested workout JSON to the database.
- * @param {Object} suggestedWorkoutJson - The workout data to save.
- * @returns {Promise<void>} A promise that resolves when the data is saved.
- */
 const saveSuggestedWorkoutToDb = async (suggestedWorkoutJson) => {
-  // PostgreSQL uses SERIAL for auto-incrementing IDs, so we don't need to explicitly pass 'id' for new inserts.
-  // The RETURNING id clause in runAsync will provide the lastID.
   const { day, title, subtitle, exercises, ai_tips } = suggestedWorkoutJson;
   const workoutResult = await runAsync('INSERT INTO workouts (day, title, subtitle, ai_tips) VALUES ($1, $2, $3, $4) RETURNING id', [day, title, subtitle, ai_tips || null]);
   const workoutId = workoutResult.lastID;
@@ -426,9 +383,8 @@ const saveSuggestedWorkoutToDb = async (suggestedWorkoutJson) => {
       if (sets && Array.isArray(sets)) {
         for (const set of sets) {
           const { reps, weight, unit, ai_tips: set_ai_tips } = set;
-          // IMPORTANT: Force weight to 0 for suggested workouts as per requirement
           const weightToSave = 0;
-          if (typeof reps !== 'number' || !['kg', 'lbs'].includes(unit)) { // Unit check is still important
+          if (typeof reps !== 'number' || !['kg', 'lbs'].includes(unit)) {
             console.warn(`Skipping invalid set for exercise ${name}:`, set);
             continue;
           }
@@ -440,35 +396,20 @@ const saveSuggestedWorkoutToDb = async (suggestedWorkoutJson) => {
   console.log(`Suggested workout for ${suggestedWorkoutJson.day} saved to database with ID: ${workoutId}`);
 };
 
-
-// MODIFIED ENDPOINT: Suggest workout for today using Gemini API
-// Now accepts additional user input, saves to DB, and returns formatted text
 app.post('/suggest-workout', async (req, res) => {
   const { additional_input } = req.body;
 
   try {
-    // Step 1: Delete any existing workout for today
     await deleteTodaysWorkout();
-
-    // Step 2: Fetch all workout data
     const allWorkoutDetails = await fetchAllWorkoutData();
-    
-    // Step 3: Build the prompt for Gemini
     const prompt = buildGeminiPrompt(allWorkoutDetails, additional_input);
-    
-    // Step 4: Call Gemini API
     const geminiResult = await callGeminiAPI(prompt);
-    
-    // Step 5: Parse and clean Gemini's response
     const suggestedWorkoutJson = parseAndCleanGeminiResponse(geminiResult);
       
-    // Step 6: Set today's date for the workout
     suggestedWorkoutJson.day = new Date().toDateString();
 
-    // Step 7: Save the newly suggested workout to the database
     await saveSuggestedWorkoutToDb(suggestedWorkoutJson);
 
-    // Step 8: Return the nicely formatted text to the client
     const formattedText = formatWorkoutAsText(suggestedWorkoutJson);
     res.send(formattedText);
 
@@ -478,11 +419,9 @@ app.post('/suggest-workout', async (req, res) => {
   }
 });
 
-// Start the Express server
 const startServer = async () => {
   try {
-    // Attempt to kill any existing process on the port before starting (OS-specific)
-    if (process.platform !== 'win32') { // lsof is typically Unix-like
+    if (process.platform !== 'win32') {
       await killProcessOnPort(port);
     } else {
       console.log('Skipping process kill by port on Windows. Please ensure port 3000 is free manually if starting locally.');
@@ -497,16 +436,15 @@ const startServer = async () => {
     });
   } catch (error) {
     console.error('Failed to start server:', error.message);
-    process.exit(1); // Exit if unable to start server
+    process.exit(1);
   }
 };
 
 startServer();
 
-// Graceful shutdown
 process.on('SIGINT', async () => {
   try {
-    await pool.end(); // Close the PostgreSQL connection pool
+    await pool.end();
     console.log('PostgreSQL connection pool closed.');
     process.exit(0);
   } catch (err) {

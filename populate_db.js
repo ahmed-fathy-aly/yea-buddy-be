@@ -2,18 +2,19 @@
 // This script will populate the PostgreSQL database with data from workouts_data.json
 // by sending POST requests to your Node.js server.
 
-const fs = require('fs').promises; // For file system operations
+require('dotenv').config(); // NEW: Load environment variables from .env file
+
+const fs = require('fs').promises;
 const path = require('path');
-// const fetch = require('node-fetch'); // Removed: Node.js v18+ has native fetch
 
 const workoutsDataPath = path.resolve(__dirname, 'workouts_data.json');
-const API_URL = 'http://localhost:3000/workouts'; // Your server's workout endpoint
+// API_URL will be read from environment variable or default to localhost
+const API_URL = process.env.API_URL || 'http://localhost:3000/workouts'; 
 
 const populateDatabase = async () => {
   try {
-    // IMPORTANT: Ensure your Node.js backend server (app.js) is running
-    // and connected to your PostgreSQL database BEFORE running this script.
     console.log("Please ensure your Node.js server (app.js) is running and connected to PostgreSQL.");
+    console.log(`Using API_URL: ${API_URL}`);
     console.log("Press Enter to continue populating the database...");
     await new Promise(resolve => {
         process.stdin.once('data', () => {
@@ -21,12 +22,10 @@ const populateDatabase = async () => {
         });
     });
 
-    // Read the workouts data from the JSON file
     const data = await fs.readFile(workoutsDataPath, 'utf8');
     const workouts = JSON.parse(data);
     console.log(`Read ${workouts.length} workouts from ${workoutsDataPath}`);
 
-    // Send each workout as a POST request to the server
     for (const workout of workouts) {
       console.log(`Attempting to add workout: ${workout.day} - ${workout.title}`);
       try {
@@ -54,7 +53,7 @@ const populateDatabase = async () => {
   } catch (error) {
     console.error('An error occurred during database population:', error.message);
   } finally {
-    process.exit(0); // Ensure the script exits
+    process.exit(0);
   }
 };
 
