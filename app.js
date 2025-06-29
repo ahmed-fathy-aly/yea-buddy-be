@@ -2,8 +2,6 @@ require('dotenv').config();
 
 const express = require('express');
 const { pool, initializePgSchema } = require('./database');
-// Removed child_process import as it's no longer used
-// const { exec } = require('child_process');
 const cors = require('cors');
 
 const app = express();
@@ -42,10 +40,10 @@ const runAsync = async (sql, params = []) => {
   }
 };
 
-// Removed killProcessOnPort function as it's not needed/supported in Render environment
-/*
+// Utility: Kill process on port (for localhost dev only)
 const killProcessOnPort = (port) => {
   return new Promise((resolve, reject) => {
+    const { exec } = require('child_process');
     exec(`lsof -t -i :${port}`, (err, stdout, stderr) => {
       if (err) {
         if (err.code === 1) {
@@ -72,7 +70,6 @@ const killProcessOnPort = (port) => {
     });
   });
 };
-*/
 
 const formatWorkoutAsText = (workout) => {
   let text = `\n--- Suggested Workout for ${workout.day || 'Today'} ---\n`;
@@ -491,6 +488,10 @@ app.post('/suggest-workout', async (req, res) => {
 
 const startServer = async () => {
   try {
+    // Kill process on port 3000 if running locally (not on Render)
+    if (!process.env.RENDER) {
+      await killProcessOnPort(port);
+    }
     await initializePgSchema();
 
     app.listen(port, () => {
