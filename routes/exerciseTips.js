@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { getAsync, allAsync } = require('../database');
+// You may need to import Gemini helpers if using Gemini API
 
 router.post('/:exerciseId', async (req, res) => {
   const exerciseId = parseInt(req.params.exerciseId);
@@ -20,8 +21,24 @@ router.post('/:exerciseId', async (req, res) => {
       const sets = await allAsync('SELECT * FROM sets WHERE exercise_id = $1', [ex.id]);
       workoutDetailsWithAllExercises.exercises.push({ ...ex, sets });
     }
-    // ... Gemini API logic ...
-    res.send('AI tips would be here (Gemini API logic omitted for brevity)');
+    let prompt = `Provide detailed tips and advice for the following exercise, considering its context within the full workout plan. Focus on proper form, common mistakes, variations, and how to maximize effectiveness.\n\nExercise to get tips for:\n${JSON.stringify(exercise, null, 2)}\n\nContext of its workout plan:\n${JSON.stringify(workoutDetailsWithAllExercises, null, 2)}\n`;
+    if (additional_input) {
+      prompt += `\nAdditional specific request from user: ${additional_input}`;
+    }
+    prompt += `\n\nDetailed tips:`;
+    // Call Gemini API (implement this or import from utils)
+    let chatHistory = [];
+    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+    const payload = { contents: chatHistory };
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`;
+    const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+    const result = await response.json();
+    if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
+      res.send(result.candidates[0].content.parts[0].text);
+    } else {
+      res.status(500).json({ error: 'Failed to get exercise tips from AI, or unexpected response format.' });
+    }
+    // res.status(501).json({ error: 'Gemini API integration required for full implementation.' });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
