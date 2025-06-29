@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { getAsync, allAsync } = require('../database');
-const { callGeminiAPI } = require('../app'); // Adjust the path as necessary
+const { callGeminiAPI } = require('./utils');
 
 router.post('/', async (req, res) => {
   try {
@@ -24,7 +24,6 @@ router.post('/', async (req, res) => {
       prompt += `\nUser input: ${user_input}`;
     }
     prompt += `\nRespond only with the JSON.`;
-    
     // Call Gemini API
     const geminiResult = await callGeminiAPI(prompt);
     let restTimeJson;

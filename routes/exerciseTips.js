@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { getAsync, allAsync } = require('../database');
-// You may need to import Gemini helpers if using Gemini API
+const { callGeminiAPI } = require('./utils');
 
 router.post('/:exerciseId', async (req, res) => {
   const exerciseId = parseInt(req.params.exerciseId);
@@ -26,7 +26,7 @@ router.post('/:exerciseId', async (req, res) => {
       prompt += `\nAdditional specific request from user: ${additional_input}`;
     }
     prompt += `\n\nDetailed tips:`;
-    // Call Gemini API (implement this or import from utils)
+    // Call Gemini API
     let chatHistory = [];
     chatHistory.push({ role: "user", parts: [{ text: prompt }] });
     const payload = { contents: chatHistory };
@@ -38,7 +38,6 @@ router.post('/:exerciseId', async (req, res) => {
     } else {
       res.status(500).json({ error: 'Failed to get exercise tips from AI, or unexpected response format.' });
     }
-    // res.status(501).json({ error: 'Gemini API integration required for full implementation.' });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { getAsync, allAsync, runAsync } = require('../database');
-// You may need to import Gemini helpers if using Gemini API
+const { callGeminiAPI, parseAndCleanGeminiResponse } = require('./utils');
 
 router.post('/', async (req, res) => {
   const { exerciseId, user_input } = req.body;
@@ -33,7 +33,7 @@ router.post('/', async (req, res) => {
     if (user_input) {
       prompt += `\nUser request: ${user_input}`;
     }
-    // 4. Call Gemini (replace with your actual Gemini API call)
+    // 4. Call Gemini
     const geminiResult = await callGeminiAPI(prompt);
     const replacementExercise = parseAndCleanGeminiResponse(geminiResult);
     // 5. Update the exercise in the database
