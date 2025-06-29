@@ -75,7 +75,41 @@ const initializePgSchema = async () => {
   }
 };
 
+// Async DB helpers
+const getAsync = async (sql, params = []) => {
+  const client = await pool.connect();
+  try {
+    const result = await client.query(sql, params);
+    return result.rows[0];
+  } finally {
+    client.release();
+  }
+};
+
+const allAsync = async (sql, params = []) => {
+  const client = await pool.connect();
+  try {
+    const result = await client.query(sql, params);
+    return result.rows;
+  } finally {
+    client.release();
+  }
+};
+
+const runAsync = async (sql, params = []) => {
+  const client = await pool.connect();
+  try {
+    const result = await client.query(sql, params);
+    return { changes: result.rowCount, lastID: result.rows[0]?.id };
+  } finally {
+    client.release();
+  }
+};
+
 module.exports = {
   pool,
-  initializePgSchema
+  initializePgSchema,
+  getAsync,
+  allAsync,
+  runAsync
 };
